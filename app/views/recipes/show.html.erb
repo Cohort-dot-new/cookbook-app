@@ -3,4 +3,12 @@
 <h2>Chef: <%= @recipe.chef %></h2>
 <p>Ingredients: <%= @recipe.ingredients %></p>
 <p>Directions: <%= @recipe.directions %></p>
-<a href="/recipes">Back to all recipes</a>
+<div>
+  <a href="/recipes">Back to all recipes</a>
+</div>
+<div>
+  <a href="/recipes/<%= @recipe.id %>">Destroy this recipe (this won't work)</a>
+</div>
+<div>
+  <%= link_to "Destroy this recipe (this works!)", "/recipes/#{@recipe.id}", method: :delete %>
+</div>
