@@ -16,7 +16,7 @@ class RecipesController < ApplicationController
       directions: params["directions"]
     )
     recipe.save
-    render 'create.html.erb'
+    redirect_to "/recipes/#{recipe.id}"
   end
 
   def show
@@ -39,13 +39,14 @@ class RecipesController < ApplicationController
     recipe.ingredients = params[:ingredients]
     recipe.directions = params[:directions]
     recipe.save
-    render 'update.html.erb'
+    flash[:success] = "Recipe successfully updated!"
+    redirect_to "/recipes/#{recipe.id}"
   end
 
   def destroy
     recipe_id = params[:id]
     recipe = Recipe.find_by(id: recipe_id)
     recipe.destroy
-    render 'destroy.html.erb'
+    redirect_to "/recipes"
   end
 end
