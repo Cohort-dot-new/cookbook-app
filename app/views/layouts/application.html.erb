@@ -46,6 +46,9 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
+      <% if current_user %>
+        <a href="#">Welcome <%= current_user.name %></a>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/signup">Signup</a></li>
         <li><a href="/login">Login</a></li>
