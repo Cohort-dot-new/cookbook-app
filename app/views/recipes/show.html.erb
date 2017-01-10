@@ -12,3 +12,7 @@
 <div>
   <%= link_to "Destroy this recipe (this works!)", "/recipes/#{@recipe.id}", method: :delete %>
 </div>
+
+<%= form_tag "/recipes/#{@recipe.id}", method: :delete do %>
+  <input type="submit" value="Delete">
+<% end %>

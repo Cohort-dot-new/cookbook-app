@@ -1,20 +1,16 @@
 <h1>New Recipe</h1>
-<%= form_tag '/recipes', method: :post do %>
-  <div class="form-group">
-    <%= label_tag :title %>
-    <%= text_field_tag :title, "", class: 'form-control' %>
+<%= form_tag '/recipes', method: :patch do %>
+  <div>
+    Title: <input type="text" name="title">
   </div>
-  <div class="form-group">
-    <%= label_tag :chef %>
-    <%= text_field_tag :chef, "", class: 'form-control' %>
+  <div>
+    Chef: <input type="text" name="chef">
   </div>
-  <div class="form-group">
-    <%= label_tag :ingredients %>
-    <%= text_field_tag :ingredients, "", class: 'form-control' %>
+  <div>
+    Ingredients: <input type="text" name="ingredients">
   </div>
-  <div class="form-group">
-    <%= label_tag :directions %>
-    <%= text_field_tag :directions, "", class: 'form-control' %>
+  <div>
+    Directions: <input type="text" name="directions">
   </div>
-  <%= submit_tag "Add recipe", class: "btn btn-primary" %>
+  <input type="submit" value="Create recipe">
 <% end %>
